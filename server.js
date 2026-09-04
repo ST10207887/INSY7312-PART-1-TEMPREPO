@@ -3,6 +3,7 @@ const https = require("https");
 const express = require("express");
 const helmet = require("helmet");
 const cors = require("cors");
+const authMiddleware = require("./middleware/authMiddleware");
 require("dotenv").config();
 
 const authRoutes = require("./routes/auth");
@@ -26,3 +27,8 @@ const sslOptions = {
 https.createServer(sslOptions, app).listen(process.env.PORT, () => {
   console.log(`Secure server running on https://localhost:${process.env.PORT}`);
 });
+
+app.get("/api/profile", authMiddleware, (req, res) => {
+  res.json({ message: `Welcome ${req.user.username}, this is your profile.` });
+});
+
