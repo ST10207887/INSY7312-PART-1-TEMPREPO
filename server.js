@@ -32,3 +32,8 @@ app.get("/api/profile", authMiddleware, (req, res) => {
   res.json({ message: `Welcome ${req.user.username}, this is your profile.` });
 });
 
+app.post("/api/auth/logout", (req, res) => {
+  // In app you blacklist token or clear
+  res.json({ message: "Logout successful" });
+});
+
