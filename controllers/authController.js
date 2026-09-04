@@ -33,3 +33,21 @@ exports.loginUser = async (req, res) => {
   const token = jwt.sign({ username }, process.env.JWT_SECRET, { expiresIn: "1h" });
   res.json({ message: "Login successful", token });
 };
+
+// Register
+exports.register = async (req, res) => {
+  const { username, password } = req.body;
+  if (!username || !password) {
+    return res.status(400).json({ error: "Username and password are required" });
+  }
+
+};
+
+// Login
+exports.login = async (req, res) => {
+  const { username, password } = req.body;
+  if (!username || !password) {
+    return res.status(400).json({ error: "Username and password are required" });
+  }
+  
+};
