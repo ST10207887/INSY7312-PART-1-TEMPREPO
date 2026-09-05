@@ -20,20 +20,22 @@ app.use("/api/auth", authRoutes);
 
 // HTTPS setup
 const sslOptions = {
-  key: fs.readFileSync("./config/ssl/key.pem"),
-  cert: fs.readFileSync("./config/ssl/cert.pem")
+  key: fs.readFileSync("./cert/server.key"),   // matches the files you generated
+  cert: fs.readFileSync("./cert/server.cert")
 };
 
-https.createServer(sslOptions, app).listen(process.env.PORT, () => {
-  console.log(`Secure server running on https://localhost:${process.env.PORT}`);
+const PORT = process.env.PORT || 3000;
+
+https.createServer(sslOptions, app).listen(PORT, () => {
+  console.log(`Secure server running on https://localhost:${PORT}`);
 });
 
+// Protected route
 app.get("/api/profile", authMiddleware, (req, res) => {
   res.json({ message: `Welcome ${req.user.username}, this is your profile.` });
 });
 
+// Logout route
 app.post("/api/auth/logout", (req, res) => {
-  // In app you blacklist token or clear
   res.json({ message: "Logout successful" });
 });
-
