@@ -20,9 +20,10 @@ app.use("/api/auth", authRoutes);
 
 // HTTPS setup
 const sslOptions = {
-  key: fs.readFileSync("./cert/server.key"),   // matches the files you generated
-  cert: fs.readFileSync("./cert/server.cert")
+  key: fs.readFileSync("./server.key"),
+  cert: fs.readFileSync("./server.cert")
 };
+
 
 const PORT = process.env.PORT || 3000;
 
