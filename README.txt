@@ -120,3 +120,13 @@ Reason: Prevents attackers from learning about system internals (stack traces, f
 Implementation: return res.status(401).json({ error: "Invalid credentials" });
 Outcome: Consistence, user-friendly error messages that maintain system confidentiality
 
+Conclusion:
+This project exemplifies a thorough authentication cycle with robust security measures:
+Registration and avoiding duplicates
+Success or failure of the login
+Routes protected by JWT
+Log off
+Strong validation and error management
+Encryption via HTTPS
+Clear documentation that includes security decisions and an architecture diagram
+
