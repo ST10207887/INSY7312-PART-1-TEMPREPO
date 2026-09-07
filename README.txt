@@ -13,6 +13,63 @@ Postman - API testing tool
 GitHub - version control and evidence commits
 HTTPS (SSL) - secure communication with self-signed certificate
 
+Steps & Evidence
+Step 1: Register User (success)
+request:POST /api/auth/register
+{
+  "username": "testuser",
+  "password": "mypassword123"
+}
+
+Response: { "message": "User registered successfully" }
+Screenshot: screenshots/Step1_register_sucess.png
+
+Step 2: Register Duplicate User (conflict)
+Response: { "error": "User already exists" }
+Screenshot: screenshots/Step2_register_duplicate.png
+
+Step 3: Login User (Success)
+Response: {
+  "message": "Login successful",
+  "token": "eyJhbGciOiJIUzI1NiIs..."
+}
+Screenshot: screenshots/Step3_login_invalid.png
+
+Step 4: Token generation
+Screenshot: screenshots/Step4_token_generation.png
+
+
+
+Step 5: Protect Route (/api/profile)
+Valid token response: { "message": "Welcome testuser, this is your profile." }
+
+Invalid token response: { "error": "Invalid token" }
+
+No token response: { "error": "No token provided" }
+
+Screenshots: screenshots/Step5_valid_token.png
+screenshots/Step5.2_no_token.png
+screenshots/Step5.3_invalid_token.png
+
+
+Step 6 Input Validation & Error Handling
+Missing username response: {"error": "Username is required"}
+Missing Password response: {"error": "Password is required"}
+Both Missing response: {"error": Username and password are required"}
+
+Screenshots: screenshots/Step6_Username_&_password_required.png
+screenshots/Step6.2_Password_required.png
+screenshots/Step6.3_Username_required.png
+
+Step 7: Logout User
+Response: {"message: "Logout successful"}
+Screenshot: screenshots/Step7_Logout_evidence.png
+
+Step 8: HTTPS register 
+Configured with self-signed SSL certificate (server.key, server.cert).
+API tested successfully in Postman over https://localhost:3000
+Screenshot: screenshots/Step8_HTTPS_register_success.png
+
 SECURITY DETAILS
 
 1. PASSWORD HAHSHING (bcrypt)
