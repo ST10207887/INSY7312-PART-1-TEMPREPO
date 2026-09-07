@@ -25,3 +25,22 @@ Outcome: The API requests are transmitted securely
 
 4. Helmet & CORS
 Decision: helmet and cors middleware are used to enhance security headers and control cross-origin requests
+Reason: Protects against common web vulnerabilities like XSS and clickjacking
+Implemenation: app.use(helmet());
+app.use(cors());
+Outcome: Adds secure HTTPS headers and allows safe client-server relationship
+
+5. Input Validation
+Decision: All user inputs are validated before processing
+Reason: Prevents malicious or incomplete data from being accepted
+Implemenation: if (!username && !password) {
+  return res.status(400).json({ error: "Username and password are required" });
+}
+Outcome: Ensures clean, safe data entry and protects against injection based attacks
+
+6. Error Handling
+Decision: Controlled error responses are used instead of exposing internal details
+Reason: Prevents attackers from learning about system internals (stack traces, file paths)
+Implementation: return res.status(401).json({ error: "Invalid credentials" });
+Outcome: Consistence, user-friendly error messages that maintain system confidentiality
+
