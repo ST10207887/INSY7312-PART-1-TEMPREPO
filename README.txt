@@ -13,6 +13,12 @@ Postman - API testing tool
 GitHub - version control and evidence commits
 HTTPS (SSL) - secure communication with self-signed certificate
 
+Question 1 - MERN Architecture Diagram
+Client (React) → Sends HTTPS requests, stores JWT.
+Server (Node.js + Express) → Handles routes, validates input, hashes passwords, generates JWT.
+Database (MongoDB) → Future persistent storage (currently in-memory).
+Security Layers: HTTPS encryption, password hashing, JWT authentication, Helmet & CORS, input validation, error handling.
+
 Steps & Evidence
 Step 1: Register User (success)
 request:POST /api/auth/register
