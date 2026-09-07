@@ -1,5 +1,18 @@
 README
 
+Authentication PI - INSY7314 Summative Project Part 1
+Overview This project demonstrate a complete JWT-based authentication flow using Node.js, Express, and Postman. It included User registration, login, protected routes, logout input validation, error handling, and HTTPS configuration.
+Evidence is provided through screenshots, a Postman collection, and a security focused architecture diagram.
+
+Technologies Used
+Node.js + Express - backend framework
+bcryptjs - password hashing
+jsongwebtoken (JWT) - token-based authentication
+helmet & cors - security middleware
+Postman - API testing tool
+GitHub - version control and evidence commits
+HTTPS (SSL) - secure communication with self-signed certificate
+
 SECURITY DETAILS
 
 1. PASSWORD HAHSHING (bcrypt)
