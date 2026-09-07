@@ -1,5 +1,8 @@
 README
 
+YOUTUBE VIDEO LINK: https://youtu.be/xdHaUMJuVg8 
+GITHUB LINK: https://github.com/EMGPMD/insy7314-2026-insy7314-poe-part-1-st10207887.git 
+
 Postman collection link: https://.postman.co/workspace/My-Workspace\~e3971f8c-764a-4a11-84e6-91a82bba5a98/request/57973635-aff1803e-a143-4f19-84af-d55a42761c82?action=share\&creator=57973635\&active-environment=57973635-1c6d2fdf-7350-4a29-b18d-0c641c742cc8 
 
 
